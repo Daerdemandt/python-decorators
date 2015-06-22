@@ -41,4 +41,5 @@ def decorator_use_example():
 	assert double.__doc__ == 'Doubles a number.'
 	assert double.multiplier == 2
 
-
+if __name__ == '__main__':
+	decorator_use_example()
