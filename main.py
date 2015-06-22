@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
-from decorator import simple_decorator1
+from decorator import decorator
 
-@simple_decorator1
+@decorator
 def test_decorator(func):
 	def inner_func(*args, **kwargs):
 		print('Test decorator approves {}'.format(func.__name__))
