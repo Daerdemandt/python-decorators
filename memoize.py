@@ -5,7 +5,7 @@ import functools
 from decorator import decorator
 
 @decorator
-class memoized(object):
+class memoize(object):
 	'''Decorator. Caches a function's return value each time it is called.
 	If called later with the same arguments, the cached value is returned
 	(not reevaluated).
@@ -31,8 +31,8 @@ class memoized(object):
 		'''Support instance methods.'''
 		return functools.partial(self.__call__, obj)
 
-def memoized_use_example():
-	@memoized
+def memoize_use_example():
+	@memoize
 	def fibonacci(n):
 		"Return the nth fibonacci number."
 		if n in (0, 1):
@@ -47,4 +47,4 @@ def memoized_use_example():
 	assert fibonacci.some_attr == 'attribute is preserved'
 
 if __name__ == '__main__':
-	memoized_use_example()
+	memoize_use_example()
