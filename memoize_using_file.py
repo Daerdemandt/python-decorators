@@ -18,8 +18,7 @@ class file_dict(dict):
 			with open(self.filename, 'rb') as cache_file:
 				self.update(load(cache_file))
 		except FileNotFoundError:
-			with open(self.filename, 'a'):
-				pass # create the file if it does not exist
+			pass # on read, don't create the file if it does not exist
 		# when object is deleted, update file
 		finalize(self, lambda: self.dump_to_file())
 	
